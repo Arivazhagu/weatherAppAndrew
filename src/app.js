@@ -4,7 +4,7 @@ const chalk = require('chalk');
 const { static } = require('express');
 const Coords = require('../src/utils/mapBoxCoord');
 const weatherData = require('../src/utils/weatherData');
-//express is function, which must be initiated to access all other stuffs
+
 const app = express();
 const hbs= require('hbs');
 
