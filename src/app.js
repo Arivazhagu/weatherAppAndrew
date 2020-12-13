@@ -6,6 +6,7 @@ const Coords = require('../src/utils/mapBoxCoord');
 const weatherData = require('../src/utils/weatherData');
 
 const app = express();
+const port = process.env.PORT || 3000;
 const hbs= require('hbs');
 
 //paths for config
@@ -85,6 +86,6 @@ app.get('*',(req,res)=>{
     title:'Weather App'});
 })
 
-app.listen(3000,()=>{
+app.listen(port,()=>{
     console.log('App listening on port 3000.')
 })

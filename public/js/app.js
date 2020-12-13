@@ -29,7 +29,7 @@ formEle.addEventListener("submit",(e)=>{
     }
     button.disabled=true;
     result.textContent='Loading...!'    
-    fetch("http://localhost:3000/weatherdata?address="+searchVal.value).then(res=>{
+    fetch("/weatherdata?address="+searchVal.value).then(res=>{
         res.json().then(data=>{
             if (data.Error) {
                 console.log('ERROR');
