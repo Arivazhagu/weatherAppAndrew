@@ -8,7 +8,7 @@ const weatherdata = (lat,long,calback)=>{
 
     request(objFormap,(err, response)=>{  
         const {error,current,location} = response.body;
-        const{weather_descriptions:wDesc,temperature:temp,feelslike:feel}=current;
+        const{weather_descriptions:wDesc,temperature:temp,feelslike:feel,humidity:humidity}=current;
         if (err) {
             calback("ERROR..!",undefined)
         }else if (error) {            
@@ -16,7 +16,7 @@ const weatherdata = (lat,long,calback)=>{
         }    
         else{            
             calback(undefined,
-                (`${location.name} : ${wDesc}.The temperature is ${temp}F and it feels like ${feel}F`))    
+                (`${location.name} : ${wDesc}.The temperature is ${temp}F and it feels like ${feel}F. Humidity stands at ${humidity}`))    
         }
     })
 }
